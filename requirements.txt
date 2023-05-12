@@ -1,0 +1,8 @@
+django
+djangorestframework
+flake8
+autopep8
+django-filter
+markdown
+djoser
+drf-yasg 

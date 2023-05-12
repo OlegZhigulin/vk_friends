@@ -1,8 +1,10 @@
 from django.urls import path
 
 from api.views import (
-    InvateList,
     FriendList,
+    check_status_relationship,
+    delete_friend,
+    InvateList,
     InvateCreate,
     InvateDelete,
     InvateAccept,
@@ -30,8 +32,12 @@ urlpatterns = [
          InvateList.as_view(),
          name='list_invate',
          ),
-    path('user/<int:pk>/status_relationship/',
-         FriendList.as_view(),
+    path('user/<int:user_id>/status_relationship/',
+         check_status_relationship,
          name='relationship',
+         ),
+    path('user/<int:id_friend>/delete_from_friend/',
+         delete_friend,
+         name='delete_from_friends',
          ),
 ]
